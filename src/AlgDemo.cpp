@@ -11,6 +11,7 @@ using namespace std;
 #include "common.h"
 
 int main() {
-	TwoSum001::main();
+	//TwoSum001::main();
+	ListAdd002::main();
 	return 0;
 }

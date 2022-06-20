@@ -8,6 +8,7 @@
 #ifndef COMMON_H_
 #define COMMON_H_
 
+#define ARR_SIZE(arr) (sizeof(arr)/sizeof((arr)[0]))
 
 #include "TwoSum_001.h"
 #include "ListAdd_002.h"
