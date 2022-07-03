@@ -15,4 +15,7 @@
 #include "StringLen_003.h"
 
 
+//算法的具体实现
+#include "Alg/BinarySearchTree.h"
+
 #endif /* COMMON_H_ */
