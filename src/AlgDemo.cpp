@@ -22,5 +22,6 @@ int main() {
 	for (int i = 0; i < ARR_SIZE(data); i++) {
 		bst.add(data[i]);
 	}
+	bst.output();
 	return 0;
 }

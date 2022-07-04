@@ -57,6 +57,7 @@ public:
 
 	void add(E element) {
 		elementNotNullCheck(element);
+		cout << element << endl;
 		//添加根节点
 		if (root == NULL) {
 			root = new Node<E>(element, NULL);
@@ -69,6 +70,7 @@ public:
 		int cmp = 0;
 		do {
 			cmp = compare(element, node->element);
+			cout << cmp << endl;
 			parent = node;
 			if (cmp > 0) {
 				node = node->right;
@@ -87,6 +89,38 @@ public:
 		}
 		m_size++;
 
+	}
+	//  ************* 输出图形二叉树 *************
+	void output_impl(Node<E>* n, bool left, string const& indent)
+	{
+		if (n->right)
+		{
+			output_impl(n->right, false, indent + (left ? "|     " : "      "));
+		}
+		cout << indent;
+		cout << (left ? '\\' : '/');
+		cout << "-----";
+		cout << n->element << endl;
+		if (n->left)
+		{
+			output_impl(n->left, true, indent + (left ? "      " : "|     "));
+		}
+	}
+
+	void output(Node<E>* root)
+	{
+		if (root->right)
+		{
+			output_impl(root->right, false, "");
+		}
+		cout << root->element << endl;
+		if (root->left)
+		{
+			output_impl(root->left, true, "");
+		}
+	}
+	void output(){
+		output(root);
 	}
 private:
 	void elementNotNullCheck(E element) {
