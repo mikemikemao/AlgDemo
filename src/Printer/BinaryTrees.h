@@ -7,11 +7,12 @@
 
 #ifndef PRINTER_BINARYTREES_H_
 #define PRINTER_BINARYTREES_H_
+#include "BinaryTreeInfo.h"
 #include "string"
-
+template<typename E>
 class BinaryTrees{
 public:
-	static string printString(BinaryTreeInfo tree) {
+	static string printString(BinaryTreeInfo<E> tree) {
 		return printString(tree, null);
 	}
 };
