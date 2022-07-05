@@ -19,9 +19,14 @@ int main() {
 	//MedianSorted004::main();
 	BinarySearchTree<int> bst;
 	int data[] = { 7, 4, 9, 2, 5, 8, 11, 3, 12, 1 };
-	for (int i = 0; i < ARR_SIZE(data); i++) {
-		bst.add(data[i]);
+	try {
+		for (int i = 0; i < ARR_SIZE(data); i++) {
+				bst.add(data[i]);
+		}
+	} catch (exception e) {
+		cout << e.what() << "\ncode: "<< endl;
 	}
+
 	bst.output();
 	return 0;
 }

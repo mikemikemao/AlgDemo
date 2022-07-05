@@ -8,23 +8,29 @@
 #ifndef ALG_BINARYSEARCHTREE_H_
 #define ALG_BINARYSEARCHTREE_H_
 #include "iostream"
+#include <iostream>     // std::cout
+#include <functional>   // std::less
+#include <algorithm>
 using namespace std;
 
 
 template<typename E>
 class Node {
 public:
-	Node(E element, Node *parent) {
-		this->element = element;
-		this->parent = parent;
+	Node(E element, Node *parent)
+		: element(element)
+		, parent(parent)
+		, left(NULL)
+	    , right(NULL){
+
 	}
 
 	bool isLeaf() {
-		return left == nullptr && right == nullptr;
+		return left == NULL && right == NULL;
 	}
 
 	bool hasTwoChildren() {
-		return left != nullptr && right != nullptr;
+		return left != NULL && right != NULL;
 	}
 	E getElement(){
 		return element;
@@ -57,20 +63,19 @@ public:
 
 	void add(E element) {
 		elementNotNullCheck(element);
-		cout << element << endl;
 		//添加根节点
 		if (root == NULL) {
 			root = new Node<E>(element, NULL);
 			m_size++;
 			return;
 		}
+
 		//添加子节点
 		Node<E> *parent = root;
 		Node<E> *node = root;
 		int cmp = 0;
 		do {
 			cmp = compare(element, node->element);
-			cout << cmp << endl;
 			parent = node;
 			if (cmp > 0) {
 				node = node->right;
@@ -83,9 +88,9 @@ public:
 		} while (node != NULL);
 		//添加子节点
 		if(cmp > 0){
-			parent->left = new Node<E>(element,parent);
-		}else{
 			parent->right = new Node<E>(element,parent);
+		}else{
+			parent->left = new Node<E>(element,parent);
 		}
 		m_size++;
 
@@ -109,6 +114,7 @@ public:
 
 	void output(Node<E>* root)
 	{
+
 		if (root->right)
 		{
 			output_impl(root->right, false, "");
@@ -129,10 +135,13 @@ private:
 		}
 	}
     int compare(E e1, E e2) {
-		if(comparator!=NULL){
-			return comparator->compare(e1, e2);
-		}
-		return (reinterpret_cast<Comparable<E>*>(e1))->compareTo(e2);
+    	if(std::less<E>()(e1,e2)==1){
+    		return -1;
+    	}else if(std::equal_to<E>()(e1,e2)==1){
+    		return 0;
+    	}else{
+    		return 1;
+    	}
 	}
 private:
     Comparator<E>* comparator;
