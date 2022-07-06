@@ -28,5 +28,6 @@ int main() {
 	}
 
 	bst.output();
+	bst.postorderTraversal();
 	return 0;
 }
