@@ -17,17 +17,6 @@ int main() {
 	//ListAdd002::main();
 	//StringLen003::main();
 	//MedianSorted004::main();
-	BinarySearchTree<int> bst;
-	int data[] = { 7, 4, 9, 2, 5, 8, 11, 3, 12, 1 };
-	try {
-		for (int i = 0; i < ARR_SIZE(data); i++) {
-				bst.add(data[i]);
-		}
-	} catch (exception e) {
-		cout << e.what() << "\ncode: "<< endl;
-	}
-
-	bst.output();
-	bst.postorderTraversal();
+	AlgTest::main();
 	return 0;
 }

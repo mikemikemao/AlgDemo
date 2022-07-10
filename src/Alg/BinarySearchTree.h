@@ -190,6 +190,12 @@ private:
 	Comparator<E> *comparator;
 	Node<E> *root;
 	int m_size;
+
+
+public:
+	static void main(){
+
+	}
 };
 
 #endif /* ALG_BINARYSEARCHTREE_H_ */
