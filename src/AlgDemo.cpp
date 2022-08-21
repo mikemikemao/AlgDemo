@@ -12,11 +12,20 @@ using namespace std;
 
 #define ARR_SIZE(arr) sizeof(arr) / sizeof(arr[0])
 
+//#define LEETCODE
+//#define ALG_THEORY
+//#define DESIGN_PATTERN
+
 int main() {
-	//TwoSum001::main();
-	//ListAdd002::main();
-	//StringLen003::main();
-	//MedianSorted004::main();
+#ifdef LEETCODE
+	LeetcodeTest::MedianSorted004Test();
+#endif
+#ifdef ALG_THEORY
 	AlgTest::main();
+#endif
+
+#ifdef DESIGN_PATTERN
+	DesignPatternTest::TemplateMethodTest();
+#endif
 	return 0;
 }

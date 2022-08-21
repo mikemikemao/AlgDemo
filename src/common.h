@@ -14,10 +14,14 @@
 #include "Leetcode/ListAdd_002.h"
 #include "Leetcode/StringLen_003.h"
 #include "Leetcode/MedianSorted_004.h"
+#include "Leetcode/LeetcodeTest.h"
 
 
 //算法的具体实现
 #include "Alg/BinarySearchTree.h"
 #include "Alg/AlgTest.h"
 
+
+//设计模式具体实现
+#include "DesignPattern/DesignPatternTest.h"
 #endif /* COMMON_H_ */
