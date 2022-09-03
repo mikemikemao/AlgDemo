@@ -8,7 +8,7 @@
 #ifndef ALG_ALGTEST_H_
 #define ALG_ALGTEST_H_
 
-#include "BinarySearchTree.h"
+#include "BinaryTree/BinarySearchTree.h"
 #include "../common.h"
 
 class AlgTest {

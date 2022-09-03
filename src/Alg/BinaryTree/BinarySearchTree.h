@@ -11,32 +11,9 @@
 #include <iostream>     // std::cout
 #include <functional>   // std::less
 #include <algorithm>
+#include "Node.h"
 using namespace std;
 
-template<typename E>
-class Node {
-public:
-	Node(E element, Node *parent) :
-			element(element), parent(parent), left(NULL), right(NULL) {
-
-	}
-
-	bool isLeaf() {
-		return left == NULL && right == NULL;
-	}
-
-	bool hasTwoChildren() {
-		return left != NULL && right != NULL;
-	}
-	E getElement() {
-		return element;
-	}
-public:
-	E element;
-	Node<E> *left;
-	Node<E> *right;
-	Node<E> *parent;
-};
 
 template<typename E>
 class Comparator {

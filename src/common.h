@@ -18,7 +18,7 @@
 
 
 //算法的具体实现
-#include "Alg/BinarySearchTree.h"
+#include "Alg/BinaryTree/BinarySearchTree.h"
 #include "Alg/AlgTest.h"
 
 

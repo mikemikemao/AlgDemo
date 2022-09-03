@@ -13,7 +13,7 @@ using namespace std;
 #define ARR_SIZE(arr) sizeof(arr) / sizeof(arr[0])
 
 //#define LEETCODE
-//#define ALG_THEORY
+#define ALG_THEORY
 //#define DESIGN_PATTERN
 
 int main() {
