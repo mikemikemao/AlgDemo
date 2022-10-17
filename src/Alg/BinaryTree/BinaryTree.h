@@ -9,6 +9,7 @@
 #define ALG_BINARYTREE_BINARYTREE_H_
 
 #include "BinaryTreePrinter/BinaryTreeInfo.h"
+#include <queue>
 
 template<typename E>
 class BinaryTree: public BinaryTreeInfo<E> {
@@ -77,6 +78,25 @@ public:
 	}
 
 	//≤„–Ú±È¿˙
+	void levelOrder(Visitor<E> &visitor) {
+		if (root == NULL || visitor == NULL)
+			return;
+		std::queue<Node<E>*> qNode;
+		qNode.push(m_root);
+		while (!qNode.empty()) {
+			Node<E>* node = queue.poll();
+			if (visitor.visit(node->element))
+				return;
+
+			if (node->left != NULL) {
+				qNode.push(node->left);
+			}
+
+			if (node->right != NULL) {
+				qNode.push(node->right);
+			}
+		}
+	}
 
 	static class Visitor{
 		bool stop;
